@@ -4,6 +4,10 @@ BookLoop is a web application for browsing and listing second-hand books. Users 
 
 The project is built using **Next.js (App Router)** with **Server Actions**, **Prisma** for database access, **NextAuth.js** for authentication, and **shadcn/ui** for a clean and accessible user interface.
 
+## 📖 Our Philosophy
+
+At BookLoop, we believe books are meant to be **read, shared, and loved**, not stored as a pile. Our platform encourages circulation, making it easy for readers to find, enjoy, and pass on books to the next reader.
+
 ---
 
 ## ✨ Features

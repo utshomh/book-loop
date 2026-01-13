@@ -6,9 +6,9 @@
 - ✅ Initialize Next.js project (App Router)
 - ✅ Setup Tailwind CSS
 - ✅ Install and configure shadcn/ui
-- ⬜ Setup Prisma
-- ⬜ Create database schema
-- ⬜ Run initial migration
+- ✅ Setup Prisma
+- ✅ Create database schema
+- ✅ Run initial migration
 
 ---
 
