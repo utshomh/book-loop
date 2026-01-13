@@ -40,14 +40,14 @@ At BookLoop, we believe books are meant to be **read, shared, and loved**, not s
 
 ## 🛠 Technologies Used
 
-- Next.js 15/16 (App Router)
+- Next.js 16 (App Router)
 - React
 - Next.js Server Actions
 - Prisma ORM
 - NextAuth.js
 - shadcn/ui
 - Tailwind CSS
-- PostgreSQL / SQLite (via Prisma)
+- PostgreSQL (via Prisma)
 
 ---
 
@@ -70,7 +70,7 @@ Unauthenticated users attempting to access protected routes are redirected to th
  1. Clone the repository
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/utshomh/book-loop.git
     ```
 
  2. Install dependencies
