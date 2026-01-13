@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 BookLoop — Used Books Marketplace
 
-## Getting Started
+BookLoop is a web application for browsing and listing second-hand books. Users can publicly explore available books and view detailed information, while authenticated users can register, log in, and add new book listings.
 
-First, run the development server:
+The project is built using **Next.js (App Router)** with **Server Actions**, **Prisma** for database access, **NextAuth.js** for authentication, and **shadcn/ui** for a clean and accessible user interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Public landing page with multiple informative sections
+- Public book listings page
+- Public book details page
+- User registration and login
+- Authentication using NextAuth.js
+- Protected route for adding new books
+- Server Actions for data mutations
+- Prisma ORM for database interaction
+- Modern UI using shadcn/ui
+- Responsive design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧭 Routes Overview
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Description | Access |
+|------|------------|--------|
+| `/` | Landing page | Public |
+| `/login` | Login page | Public |
+| `/register` | Register page | Public |
+| `/books` | Book listings | Public |
+| `/books/[id]` | Book details | Public |
+| `/add-book` | Add a new book | Protected |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Technologies Used
 
-## Deploy on Vercel
+- Next.js 15/16 (App Router)
+- React
+- Next.js Server Actions
+- Prisma ORM
+- NextAuth.js
+- shadcn/ui
+- Tailwind CSS
+- PostgreSQL / SQLite (via Prisma)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔐 Authentication
+
+Authentication is handled using **NextAuth.js** with a credentials-based provider.
+
+Users can:
+
+- Register with email and password
+- Log in using registered credentials
+- Access protected routes when authenticated
+
+Unauthenticated users attempting to access protected routes are redirected to the login page.
+
+---
+
+## ⚙️ Setup & Installation
+
+ 1. Clone the repository
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+ 2. Install dependencies
+
+    ```bash
+    npm install
+    ```
+
+ 3. Setup environment variables
+
+    ```env
+    DATABASE_URL="your-database-url"
+    NEXTAUTH_SECRET="your-secret-key"
+    NEXTAUTH_URL="http://localhost:3000"
+    ```
+
+ 4. Initialize Prisma
+
+    ```bash
+    npx prisma migrate dev
+    ```
+
+ 5. Start the development server
+
+    ```bash
+    npm run dev
+    ```
+
+ 6. Open the application
+
+    ```url
+    http://localhost:3000
+    ```
