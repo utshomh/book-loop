@@ -18,7 +18,7 @@
 - ✅ Create User Schema: Update schema.prisma with email and password fields.
 - ✅ Define Session Library: Create utilities to encrypt/decrypt JWTs and set/get cookies.
 - ✅ Build Auth Actions: Create login and register Server Actions.
-- ⬜ Middleware Protection: Implement middleware.ts to check session cookies on protected routes.
+- ✅ Middleware Protection: Implement middleware.ts to check session cookies on protected routes.
 - ✅ Create Auth Utilities: Functions like getUser() or logout().
 
 ---
@@ -35,24 +35,24 @@
 
 ## 🏠 Landing Page
 
-- ⬜ Create Navbar
+- ✅ Create Navbar
 - ⬜ Hero section
 - ⬜ Why Buy Used Books section
 - ⬜ Categories section
 - ⬜ How It Works section
 - ⬜ Featured Books section
 - ⬜ Call To Action section
-- ⬜ Footer
+- ✅ Footer
 
 ---
 
 ## 👤 Authentication Pages
 
-- ⬜ Create login page
-- ⬜ Create register page
-- ⬜ Build forms using shadcn/ui
-- ⬜ Handle form validation
-- ⬜ Redirect after successful auth
+- ✅ Create login page
+- ✅ Create register page
+- ✅ Build forms using shadcn/ui
+- ✅ Handle form validation
+- ✅ Redirect after successful auth
 
 ---
 
