@@ -12,7 +12,18 @@
 
 ---
 
-## 🔐 Authentication Setup
+## 🔐 Vanilla Authentication
+
+- ✅ Install Security Dependencies: bcryptjs for hashing and jose for JWT session tokens.
+- ✅ Create User Schema: Update schema.prisma with email and password fields.
+- ✅ Define Session Library: Create utilities to encrypt/decrypt JWTs and set/get cookies.
+- ✅ Build Auth Actions: Create login and register Server Actions.
+- ⬜ Middleware Protection: Implement middleware.ts to check session cookies on protected routes.
+- ✅ Create Auth Utilities: Functions like getUser() or logout().
+
+---
+
+## 🔐 NextAuth Authentication
 
 - ⬜ Install NextAuth.js
 - ⬜ Configure NextAuth with Prisma adapter
