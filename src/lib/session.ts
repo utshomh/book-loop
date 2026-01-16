@@ -29,13 +29,13 @@ export async function decrypt(input: string): Promise<JWTPayload> {
   return payload;
 }
 
-export async function getUser(): Promise<SessionPayload["user"] | null> {
+export async function getSession(): Promise<SessionPayload | null> {
   const session = (await cookies()).get("session")?.value;
   if (!session) return null;
 
   try {
-    const decoded = (await decrypt(session)) as SessionPayload;
-    return decoded.user;
+    const payload = (await decrypt(session)) as SessionPayload;
+    return payload;
   } catch (err) {
     console.error(err);
     return null;

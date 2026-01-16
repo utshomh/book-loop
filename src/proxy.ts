@@ -1,10 +1,10 @@
-import { getUser } from "@/lib/session";
+import { getSession } from "@/lib/session";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
-  const user = await getUser();
+  const session = await getSession();
 
-  if (!user) return NextResponse.redirect(new URL("/login", request.url));
+  if (!session) return NextResponse.redirect(new URL("/login", request.url));
 }
 
 export const config = {

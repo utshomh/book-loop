@@ -1,12 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* 1. Define custom variants */
 @custom-variant dark (&:is(.dark *));
 
-/* 2. Define your raw variables (using OKLCH for better color accuracy) */
 :root {
-  /* Soft Parchment Paper */
   --background: oklch(0.98 0.01 85);
   --foreground: oklch(0.25 0.02 45);
 
@@ -16,18 +13,15 @@
   --popover: oklch(0.99 0.005 85);
   --popover-foreground: oklch(0.25 0.02 45);
 
-  /* Primary: Deep Library Green */
   --primary: oklch(0.35 0.06 150);
   --primary-foreground: oklch(0.98 0.01 85);
 
-  /* Secondary: Warm Leather Tan */
   --secondary: oklch(0.92 0.04 80);
   --secondary-foreground: oklch(0.35 0.06 150);
 
-  /* Muted & Accents */
   --muted: oklch(0.94 0.02 85);
   --muted-foreground: oklch(0.45 0.02 45);
-  --accent: oklch(0.88 0.1 95); /* Bookmark Gold */
+  --accent: oklch(0.88 0.1 95);
   --accent-foreground: oklch(0.25 0.02 45);
 
   --destructive: oklch(0.55 0.18 25);
@@ -39,7 +33,6 @@
 }
 
 .dark {
-  /* Midnight Ink Background */
   --background: oklch(0.18 0.02 250);
   --foreground: oklch(0.92 0.01 250);
 
@@ -49,7 +42,6 @@
   --popover: oklch(0.22 0.02 250);
   --popover-foreground: oklch(0.92 0.01 250);
 
-  /* Primary: Vibrant Minty Sage */
   --primary: oklch(0.78 0.08 160);
   --primary-foreground: oklch(0.15 0.02 250);
 
@@ -67,7 +59,6 @@
   --ring: oklch(0.78 0.08 160);
 }
 
-/* 3. Register variables into Tailwind's theme system */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -88,14 +79,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Radius mapping for Shadcn components */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* 4. Base styles */
 @layer base {
   * {
     @apply border-border outline-ring/50;

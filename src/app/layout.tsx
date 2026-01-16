@@ -30,7 +30,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen items-center justify-between gap-2 px-2`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -38,9 +38,11 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="w-full">{children}</main>
-          <Footer />
+          <div className="min-h-screen flex flex-col justify-between">
+            <Navbar />
+            <main className="container mx-auto px-4 py-8">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
