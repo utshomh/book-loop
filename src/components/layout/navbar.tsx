@@ -27,7 +27,7 @@ export async function Navbar() {
         <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
           {session ? (
             <>
-              <Link href="/dashboard/add-book" className="hidden md:block">
+              <Link href="/books/add" className="hidden md:block">
                 <Button variant="outline" className="gap-2">
                   <PlusCircle className="h-4 w-4" />
                   Add a Book

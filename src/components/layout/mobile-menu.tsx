@@ -59,7 +59,7 @@ export function MobileMenu({ session }: { session: SessionPayload | null }) {
               </Link>
             </div>
           ) : (
-            <Link href="/dashboard/add-book" className="w-full">
+            <Link href="/books/add" className="w-full">
               <Button className="w-full h-11 gap-2 text-base shadow-sm">
                 <PlusCircle className="h-4 w-4" />
                 Add a Book

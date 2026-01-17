@@ -51,20 +51,6 @@ At BookLoop, we believe books are meant to be **read, shared, and loved**, not s
 
 ---
 
-## 🔐 Authentication
-
-Authentication is handled using **NextAuth.js** with a credentials-based provider.
-
-Users can:
-
-- Register with email and password
-- Log in using registered credentials
-- Access protected routes when authenticated
-
-Unauthenticated users attempting to access protected routes are redirected to the login page.
-
----
-
 ## ⚙️ Setup & Installation
 
  1. Clone the repository

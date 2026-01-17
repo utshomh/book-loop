@@ -14,6 +14,8 @@ export default async function BookDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  if (Number.isNaN(Number(id))) return notFound();
+
   const book = await getBookById(Number(id));
 
   if (!book) return notFound();

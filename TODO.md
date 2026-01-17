@@ -77,21 +77,21 @@
 
 ## ✍️ Add Book (Protected)
 
-- ⬜ Create `/add-book` page
-- ⬜ Protect route using authentication check
-- ⬜ Build add book form with shadcn/ui
-- ⬜ Validate form inputs
-- ⬜ Create Server Action for adding books
-- ⬜ Save book using Prisma
+- ✅ Create `/books/add` page
+- ✅ Protect route using authentication check
+- ✅ Build add book form with shadcn/ui
+- ✅ Validate form inputs
+- ✅ Create Server Action for adding books
+- ✅ Save book using Prisma
 - ⬜ Show success toast
-- ⬜ Redirect to book listings
+- ✅ Redirect to book listings
 
 ---
 
 ## 🧪 Final Touches
 
-- ⬜ Add loading skeletons
-- ⬜ Improve UI responsiveness
+- ✅ Add loading skeletons
+- ✅ Improve UI responsiveness
 - ⬜ Clean up code
 - ⬜ Final testing
-- ⬜ Update README
+- ✅ Update README

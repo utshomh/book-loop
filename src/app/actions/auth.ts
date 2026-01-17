@@ -65,7 +65,7 @@ export async function login(values: z.infer<typeof LoginSchema>) {
     sameSite: "lax",
   });
 
-  redirect("/");
+  redirect("/books");
 }
 
 export async function logout() {
