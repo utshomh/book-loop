@@ -18,7 +18,7 @@ export function MobileMenu({ session }: { session: SessionPayload | null }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="hover:bg-accent">
+        <Button variant="outline" size="icon" className="hover:bg-accent">
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>

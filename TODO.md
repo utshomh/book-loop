@@ -59,10 +59,10 @@
 
 ## 📋 Book Listings
 
-- ⬜ Create `/books` page
-- ⬜ Fetch books using Server Components
-- ⬜ Create reusable BookCard component
-- ⬜ Display title, description, price, image, condition
+- ✅ Create `/books` page
+- ✅ Fetch books using Server Components
+- ✅ Create reusable BookCard component
+- ✅ Display title, description, price, image, condition
 
 ---
 

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { PlusCircle } from "lucide-react";
 
-import { Logo } from "@/components/common/logo";
 import { getSession } from "@/lib/session";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/common/logo";
+import { NavLink } from "@/components/ui/nav-link";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import { UserDropdown } from "@/components/layout/user-dropdown";
@@ -18,26 +19,16 @@ export async function Navbar() {
           <Logo />
         </div>
 
-        <div className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <Link
-            href="/books"
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            Books
-          </Link>
-          <Link
-            href="/faq"
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            Support
-          </Link>
+        <div className="hidden md:flex items-center gap-4">
+          <NavLink href="/books">Books</NavLink>
+          <NavLink href="/faq">Support</NavLink>
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
           {session ? (
             <>
               <Link href="/dashboard/add-book" className="hidden md:block">
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button variant="outline" className="gap-2">
                   <PlusCircle className="h-4 w-4" />
                   Add a Book
                 </Button>
