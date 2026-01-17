@@ -13,3 +13,16 @@ export async function getBooks(
   });
   return books;
 }
+
+export async function getBookById(
+  id: number
+): Promise<(Book & { seller: User; category: Category }) | null> {
+  const book = await prisma.book.findFirst({
+    where: { id: id },
+    include: {
+      category: true,
+      seller: true,
+    },
+  });
+  return book;
+}

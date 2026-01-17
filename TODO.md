@@ -68,10 +68,10 @@
 
 ## 🔍 Book Details
 
-- ⬜ Create dynamic route `/books/[id]`
-- ⬜ Fetch single book using Prisma
-- ⬜ Display full book details
-- ⬜ Handle loading and not-found states
+- ✅ Create dynamic route `/books/[id]`
+- ✅ Fetch single book using Prisma
+- ✅ Display full book details
+- ✅ Handle loading and not-found states
 
 ---
 

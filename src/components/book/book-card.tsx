@@ -95,9 +95,8 @@ export function BookCard({ book }: BookCardProps) {
           <Avatar className="h-6 w-6">
             <AvatarImage src={seller.image} />
           </Avatar>
-          <span className="text-xs text-muted-foreground">
-            Sold by{" "}
-            <span className="font-medium text-foreground">{seller.name}</span>
+          <span className="text-xs text-foreground font-medium">
+            Seller: <span className="italic">{seller.name}</span>
           </span>
         </div>
 
