@@ -1,4 +1,4 @@
-import { Step } from "@/components/step";
+import { Step } from "@/components/home/step";
 
 export function HowItWorks() {
   return (

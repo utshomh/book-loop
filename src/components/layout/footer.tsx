@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import Logo from "@/components/logo";
+import { Logo } from "@/components/common/logo";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="w-full border-t bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4 py-10">

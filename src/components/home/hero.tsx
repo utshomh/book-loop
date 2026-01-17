@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 
 export function Hero() {
   return (
-    <section className="relative py-20 md:py-32 px-8 overflow-hidden bg-secondary/30 space-y-8">
+    <section className="relative py-20 md:py-32 px-8 overflow-hidden bg-secondary/30 space-y-8 rounded-2xl">
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10" />
 
@@ -16,7 +16,7 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl mb-6">
-          Give Old Stories <br className="hidden sm:block" />
+          Give Old Stories <br />
           <span className="text-foreground relative">
             A New Chapter
             <svg

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
 export function CTA() {
@@ -7,9 +9,11 @@ export function CTA() {
         <span className="text-sm font-semibold text-muted-foreground tracking-tight">
           Ready to join the community?
         </span>
-        <Button size="lg" className="rounded-full h-12 px-8 font-semibold">
-          Get Started Now
-        </Button>
+        <Link href="/login">
+          <Button size="lg" className="rounded-full h-12 px-8 font-semibold">
+            Get Started Now
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -23,13 +23,13 @@
 
 ---
 
-## 🔐 NextAuth Authentication
+<!-- ## 🔐 NextAuth Authentication
 
 - ⬜ Install NextAuth.js
 - ⬜ Configure NextAuth with Prisma adapter
 - ⬜ Setup credentials provider
 - ⬜ Configure environment variables
-- ⬜ Create auth utilities (getSession / auth check)
+- ⬜ Create auth utilities (getSession / auth check) -->
 
 ---
 

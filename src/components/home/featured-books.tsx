@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { getBooks } from "@/app/actions/book";
-import { BookCard } from "@/components/book-card";
+import { BookCard } from "@/components/book/book-card";
 
 export async function FeaturedBooks() {
   const books = await getBooks(6);

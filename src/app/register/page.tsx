@@ -9,8 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { RegisterSchema } from "@/schemas/auth";
 import { register } from "@/app/actions/auth";
-import { SubmitButton } from "@/components/submit-button";
-import { PasswordInput } from "@/components/password-input";
+import { SubmitButton } from "@/components/ui/submit-button";
+import { PasswordInput } from "@/components/ui/password-input";
 import {
   Form,
   FormControl,

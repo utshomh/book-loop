@@ -1,5 +1,6 @@
 import { Recycle, Users, Wallet } from "lucide-react";
-import { FeatureCard } from "@/components/feature-card";
+
+import { FeatureCard } from "@/components/home/feature-card";
 
 export function WhyUs() {
   return (
