@@ -36,12 +36,13 @@
 ## 🏠 Landing Page
 
 - ✅ Create Navbar
-- ⬜ Hero section
-- ⬜ Why Buy Used Books section
-- ⬜ Categories section
-- ⬜ How It Works section
-- ⬜ Featured Books section
-- ⬜ Call To Action section
+- ✅ Hero section
+- ✅ Why Us
+- ✅ Categories section
+- ✅ How It Works section
+- ✅ Featured Books section
+- ✅ Call To Action section
+- ✅ Newsletter section
 - ✅ Footer
 
 ---
