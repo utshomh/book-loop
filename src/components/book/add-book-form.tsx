@@ -1,8 +1,10 @@
 "use client";
 
 import { z } from "zod";
+import { toast } from "sonner";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
+import { redirect } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { AddBookSchema } from "@/schemas/book";
@@ -42,7 +44,6 @@ type Props = {
 };
 
 export default function AddBookForm({ categories, sellerId }: Props) {
-  const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof AddBookSchema>>({
@@ -60,14 +61,16 @@ export default function AddBookForm({ categories, sellerId }: Props) {
   });
 
   function onSubmit(values: z.infer<typeof AddBookSchema>) {
-    setError("");
-
     startTransition(() => {
-      addBook(values).then((res) => {
-        if (res?.error) setError(res.error);
-        if (res?.success) form.reset({ ...form.getValues(), sellerId });
+      addBook(values).then((data) => {
+        if (data?.error) {
+          toast.error(data.error);
+        } else {
+          toast.success("Book added successfully!");
+          form.reset({ ...form.getValues(), sellerId });
+          redirect("/books");
+        }
       });
-      form.reset();
     });
   }
 
@@ -208,8 +211,6 @@ export default function AddBookForm({ categories, sellerId }: Props) {
                 )}
               />
             </div>
-
-            {error && <p className="text-sm text-red-500">{error}</p>}
 
             <SubmitButton loading={isPending} fallback="Adding Book...">
               Add Book

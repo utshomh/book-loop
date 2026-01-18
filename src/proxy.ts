@@ -2,9 +2,19 @@ import { getSession } from "@/lib/session";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
-  const session = await getSession();
+  try {
+    const session = await getSession();
 
-  if (!session) return NextResponse.redirect(new URL("/login", request.url));
+    if (!session) {
+      const loginUrl = new URL("/login", request.nextUrl.origin);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    return NextResponse.next();
+  } catch (error) {
+    console.error("Session verification failed:", error);
+    return NextResponse.redirect(new URL("/login", request.nextUrl.origin));
+  }
 }
 
 export const config = {

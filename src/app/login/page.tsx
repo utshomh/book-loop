@@ -2,8 +2,10 @@
 
 import { z } from "zod";
 import Link from "next/link";
+import { toast } from "sonner";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
+import { redirect } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { login } from "@/app/actions/auth";
@@ -29,7 +31,6 @@ import {
 } from "@/components/ui/card";
 
 export default function LoginPage() {
-  const [error, setError] = useState<string>("");
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -41,12 +42,14 @@ export default function LoginPage() {
   });
 
   function onSubmit(values: z.infer<typeof LoginSchema>) {
-    setError("");
-
     startTransition(() => {
       login(values).then((data) => {
         if (data?.error) {
-          setError(data.error);
+          toast.error(data.error);
+        } else {
+          toast.success("Logged in successfully!");
+          form.reset();
+          redirect("/books");
         }
       });
     });
@@ -96,12 +99,6 @@ export default function LoginPage() {
                 </FormItem>
               )}
             />
-
-            {error && (
-              <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive">
-                <p>{error}</p>
-              </div>
-            )}
 
             <SubmitButton loading={isPending} fallback={"Logging in..."}>
               Login

@@ -2,8 +2,10 @@
 
 import { z } from "zod";
 import Link from "next/link";
+import { toast } from "sonner";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
+import { redirect } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Input } from "@/components/ui/input";
@@ -29,7 +31,6 @@ import {
 } from "@/components/ui/card";
 
 export default function RegisterPage() {
-  const [error, setError] = useState<string>("");
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -43,12 +44,14 @@ export default function RegisterPage() {
   });
 
   function onSubmit(values: z.infer<typeof RegisterSchema>) {
-    setError("");
-
     startTransition(() => {
       register(values).then((data) => {
         if (data?.error) {
-          setError(data.error);
+          toast.error(data.error);
+        } else {
+          toast.success("Account created successfully!");
+          form.reset();
+          redirect("/login");
         }
       });
     });
@@ -124,8 +127,6 @@ export default function RegisterPage() {
                 </FormItem>
               )}
             />
-
-            {error && <div className="text-red-500 text-sm">{error}</div>}
 
             <SubmitButton loading={isPending} fallback={"Creating Account..."}>
               Create an Account

@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { toast } from "sonner";
+import { redirect } from "next/navigation";
 
 import { logout } from "@/app/actions/auth";
 import { SessionPayload } from "@/lib/session";
@@ -40,7 +44,15 @@ export function UserDropdown({
           <Link href="/dashboard/my-books">My Listings</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <form action={logout}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            logout().then(() => {
+              toast.success("Logged out successfully!");
+              redirect("/login");
+            });
+          }}
+        >
           <button className="relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-red-600">
             Logout
           </button>

@@ -1,11 +1,9 @@
 "use server";
 
-import z from "zod";
-import { redirect } from "next/navigation";
-
 import { prisma } from "@/lib/prisma";
 import { AddBookSchema } from "@/schemas/book";
 import { Book, Category, User } from "@prisma/client";
+import z from "zod";
 
 export async function getBooks(
   length?: number
@@ -45,5 +43,5 @@ export async function addBook(book: z.infer<typeof AddBookSchema>) {
     },
   });
 
-  redirect("/books");
+  return { success: true };
 }

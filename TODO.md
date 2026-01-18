@@ -83,7 +83,7 @@
 - ✅ Validate form inputs
 - ✅ Create Server Action for adding books
 - ✅ Save book using Prisma
-- ⬜ Show success toast
+- ✅ Show success toast
 - ✅ Redirect to book listings
 
 ---
@@ -92,6 +92,6 @@
 
 - ✅ Add loading skeletons
 - ✅ Improve UI responsiveness
-- ⬜ Clean up code
-- ⬜ Final testing
+- ✅ Clean up code
+- ✅ Final testing
 - ✅ Update README

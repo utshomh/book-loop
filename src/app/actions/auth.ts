@@ -3,7 +3,6 @@
 import { z } from "zod";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 import { prisma } from "@/lib/prisma";
 import { encrypt } from "@/lib/session";
@@ -23,14 +22,12 @@ export async function register(values: z.infer<typeof RegisterSchema>) {
 
   const hashedPassword = await bcrypt.hash(password, 10);
   const defaultImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-    name
+    name,
   )}&background=random`;
 
   await prisma.user.create({
     data: { name, email, password: hashedPassword, image: defaultImage },
   });
-
-  redirect("/login");
 }
 
 export async function login(values: z.infer<typeof LoginSchema>) {
@@ -58,17 +55,17 @@ export async function login(values: z.infer<typeof LoginSchema>) {
     expires,
   });
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   (await cookies()).set("session", session, {
     expires,
     httpOnly: true,
-    secure: true,
+    secure: isProduction,
     sameSite: "lax",
+    path: "/",
   });
-
-  redirect("/books");
 }
 
 export async function logout() {
   (await cookies()).set("session", "", { expires: new Date(0) });
-  redirect("/login");
 }
